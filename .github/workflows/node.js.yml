@@ -10,21 +10,27 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - name: Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          path: HymnFrontend/hymn-frontend
+          path: HymnFrontend/hymn-frontend # Specify the path where you want to checkout the repository
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14.x'
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
 
-    - name: Install dependencies
-      run: npm install
+      - name: List files in working directory
+        run: ls -al HymnFrontend/hymn-frontend # Adjust the path accordingly
 
-    - name: Build
-      run: npm run build
+      - name: Install dependencies
+        run: npm install
+        working-directory: HymnFrontend/hymn-frontend # Specify the directory where npm install should be run
 
-    - name: Test
-      run: npm test
+      - name: Build
+        run: npm run build
+        working-directory: HymnFrontend/hymn-frontend # Specify the directory where npm run build should be run
+
+      - name: Test
+        run: npm test
+        working-directory: HymnFrontend/hymn-frontend # Specify the directory where npm test should be run
