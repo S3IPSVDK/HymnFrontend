@@ -1,14 +1,11 @@
 import React from "react";
+import "./index.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <a className="text-SCGreen font-roboto">
+        <h1 className="text-6xl text-TestBlue font-roboto">
           Learn React
-        </a>
-      </header>
-    </div>
+        </h1>
   );
 }
 
