@@ -25,3 +25,16 @@ jobs:
 
       - name: Test
         run: npm test
+
+      - name: SonarQube Scan
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
+          npx sonarqube-scanner \
+          -Dsonar.projectKey=Hymn_sonarQube \
+          -Dsonar.projectName="Your Project Name" \
+          -Dsonar.projectVersion=1.0 \
+          -Dsonar.sources=src \
+          -Dsonar.sourceEncoding=UTF-8 \
+          -Dsonar.host.url=http://localhost:9000 \
+          -Dsonar.login=$SONAR_TOKEN
