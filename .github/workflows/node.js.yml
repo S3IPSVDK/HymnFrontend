@@ -32,7 +32,7 @@ jobs:
         run: |
           npx sonarqube-scanner \
           -Dsonar.projectKey=Hymn_sonarQube \
-          -Dsonar.projectName="Your Project Name" \
+          -Dsonar.projectName="Hymn_sonarQube" \
           -Dsonar.projectVersion=1.0 \
           -Dsonar.sources=src \
           -Dsonar.sourceEncoding=UTF-8 \
