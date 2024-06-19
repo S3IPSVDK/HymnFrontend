@@ -5,6 +5,7 @@ import SongPlayer from './components/SongPlayer';
 import "./index.css";
 
 function App() {
+    const [audio] = useState(new Audio());
     const [audioFiles, setAudioFiles] = useState([]);
     const [currentAudio, setCurrentAudio] = useState(null);
 
